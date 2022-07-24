@@ -1,0 +1,14 @@
+node_modules
+metro.config.js
+babel.config.js
+.eslintrc.js
+**/Localizable.ts
+config-overrides.js
+
+# testing
+/coverage
+
+# production
+/build
+
+*.hbs

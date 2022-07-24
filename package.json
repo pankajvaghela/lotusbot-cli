@@ -4,9 +4,42 @@
   "description": "Lotus Bot CLI ",
   "author": "Pankaj Vaghela @pankajvaghela",
   "main": "index.js",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
+    "c": "shx rm -rf dist",
+    "b": "yarn build",
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "check:prettier": "prettier -c src/",
+    "format:prettier": "prettier -w src/",
+    "type-check": "tsc",
+    "pre-commit": "yarn format:prettier && yarn type-check && yarn lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "^2.6.2",
+    "shx": "^0.3.3",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn format:prettier"
+    ]
+  }
 }

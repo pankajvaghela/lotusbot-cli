@@ -1,0 +1,12 @@
+node_modules
+babel.config.js
+.eslintrc.js
+config-overrides.js
+
+# testing
+/coverage
+
+# production
+/dist
+/build
+
