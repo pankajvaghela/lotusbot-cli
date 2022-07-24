@@ -1,0 +1,12 @@
+{
+  "name": "lotus-bot-cli",
+  "version": "0.0.1",
+  "description": "Lotus Bot CLI ",
+  "author": "Pankaj Vaghela @pankajvaghela",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {}
+}
