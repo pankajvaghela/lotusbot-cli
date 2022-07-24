@@ -5,9 +5,14 @@
   "author": "Pankaj Vaghela @pankajvaghela",
   "main": "index.js",
   "license": "MIT",
+  "bin": {
+    "lotbot": "./bin/run"
+  },
   "scripts": {
     "c": "shx rm -rf dist",
     "b": "yarn build",
+    "dev": "ts-node ./src/lotbot.ts",
+    "rl": "yarn release:local",
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
@@ -15,12 +20,14 @@
     "format:prettier": "prettier -w src/",
     "type-check": "tsc",
     "pre-commit": "yarn format:prettier && yarn type-check && yarn lint",
+    "release:local": "yarn build && npm i -g .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
+    "@types/node": "^18.6.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
@@ -41,5 +48,9 @@
     "*.{js,jsx,ts,tsx}": [
       "yarn format:prettier"
     ]
+  },
+  "dependencies": {
+    "@types/yargs": "^17.0.10",
+    "yargs": "^17.5.1"
   }
 }

@@ -3,6 +3,8 @@ babel.config.js
 .eslintrc.js
 config-overrides.js
 
+/bin
+
 # testing
 /coverage
 

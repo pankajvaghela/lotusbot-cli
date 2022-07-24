@@ -5,6 +5,8 @@ babel.config.js
 **/Localizable.ts
 config-overrides.js
 
+/bin
+
 # testing
 /coverage
 
