@@ -1,17 +1,18 @@
 import chalk from 'chalk';
 import boxen from 'boxen';
+import { createCommand } from '../../../utils/command.js';
+import { ModuleName } from '../config.js';
 
 const log = console.log;
 export const PROJECT_NAME = 'LotBot';
 
-export const HelloCommand = {
-  summary: 'hello <name>',
-  fullDescription: ': Say hello to someone',
-  fn1: (...args: any) => {
+export const HelpCommand = createCommand('', {
+  command: 'help',
+  fullDescription: 'Show LotBot help',
+  builder: (...args: any) => {
     // console.log(args);
   },
-
-  commandResolver: (argv: any) => {
+  resolver: (argv: any) => {
     log(' ');
     console.log(
       boxen(chalk.blue(`Welcome to ${PROJECT_NAME} CLI!`), {
@@ -23,4 +24,5 @@ export const HelloCommand = {
 
     console.info('Hello', argv.name);
   },
-};
+  showHelp: true,
+});

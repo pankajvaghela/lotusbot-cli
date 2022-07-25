@@ -1,19 +1,36 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { Commands } from '../commands/index.js';
-export const PROJECT_NAME = 'LotBot';
+import { CommandNamespace } from '../CommandNamespaces.js';
+import { Command } from '../utils/types.js';
 
-export const initCli = () => {
+export const initCli = async () => {
   const yargsApp = yargs(hideBin(process.argv));
 
-  Object.values(Commands).forEach((command) => {
+  const Commands = await getCommandsList(Object.values(CommandNamespace));
+
+  Commands.forEach((command) => {
     yargsApp.command(
-      command.summary,
+      command.command,
       command.fullDescription,
-      command.fn1,
-      command.commandResolver,
+      command.builder,
+      command.resolver,
     );
   });
 
-  yargsApp.demandCommand(1).parse();
+  yargsApp.help().demandCommand(1).parse();
 };
+
+const getCommandsList = async (namespaces: string[]) =>
+  (
+    await Promise.all(
+      namespaces.map(async (CommandNamespace) => {
+        const commandsList = await import(
+          `../modules/${CommandNamespace}/index.js`
+        );
+        return commandsList;
+      }),
+    )
+  )
+    .flat(1)
+    .map((module) => Object.values(module.Commands))
+    .flat(1) as Command[];
