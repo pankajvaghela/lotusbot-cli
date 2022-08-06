@@ -1,15 +1,25 @@
 {
-  "name": "lotus-bot-cli",
+  "name": "lotusbot-cli",
   "version": "0.0.1",
   "description": "Lotus Bot CLI ",
-  "author": "Pankaj Vaghela @pankajvaghela",
-  "exports": "./dist/lotbot.ts",
+  "author": "Pankaj Vaghela <vpankaj1998official@gmail.com>",
   "type": "module",
   "license": "MIT",
+  "keywords": [
+    "lotbot-cli",
+    "lotbot",
+    "lotus bot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pankajvaghela/lotusbot-cli.git"
+  },
+  "exports": "./bin/run.js",
   "bin": {
     "lotbot": "./bin/run.js"
   },
   "scripts": {
+    "lotbot-cli": "node ./bin/run.js",
     "c": "shx rm -rf dist",
     "b": "yarn build",
     "dev": "tsc -b && ./bin/dev.js",

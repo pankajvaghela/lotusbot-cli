@@ -1,0 +1,21 @@
+# Same as gitignore
+*-debug.log
+*-error.log
+/.nyc_output
+/package-lock.json
+/yarn.lock
+/tmp
+node_modules
+
+# dev files
+.editorconfig                             
+.eslintignore                             
+.eslintrc.js                              
+.prettierignore                           
+.prettierrc.json                          
+.vscode/settings.json   
+
+# src code
+/src
+bin/dev.cmd                               
+bin/dev.js

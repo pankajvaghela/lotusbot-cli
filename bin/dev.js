@@ -1,8 +1,5 @@
 #!/usr/bin/env node 
 
-//--experimental-specifier-resolution=node
-import { join } from 'path';
-
 
 import lotbot from '../dist/lotbot.js'
 

@@ -7,3 +7,5 @@
 /yarn.lock
 /tmp
 node_modules
+
+*.tgz
