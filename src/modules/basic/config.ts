@@ -1,3 +1,11 @@
-import { CommandNamespace } from '../../CommandNamespaces.js';
+import { createModule, ModuleName } from '../../models/index.js';
 
-export const ModuleName = CommandNamespace.Basic;
+export const BasicModule = createModule(
+  ModuleName.Basic,
+  ModuleName.Basic.toLowerCase(),
+  ModuleName.Basic.toLowerCase(),
+);
+
+export const Config = {
+  module: BasicModule,
+};
