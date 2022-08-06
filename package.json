@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Lotus Bot CLI ",
   "author": "Pankaj Vaghela @pankajvaghela",
-  "exports": "dist/lotbot.ts",
+  "exports": "./dist/lotbot.ts",
   "type": "module",
   "license": "MIT",
   "bin": {
