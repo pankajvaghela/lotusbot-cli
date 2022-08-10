@@ -1,6 +1,6 @@
 {
   "name": "lotusbot-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Lotus Bot CLI ",
   "author": "Pankaj Vaghela <vpankaj1998official@gmail.com>",
   "type": "module",
