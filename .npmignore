@@ -13,7 +13,8 @@ node_modules
 .eslintrc.js                              
 .prettierignore                           
 .prettierrc.json                          
-.vscode/settings.json   
+.vscode/
+.github/
 
 # src code
 /src
